@@ -54,6 +54,7 @@
 </template>
 
 <script>
+
   import VueDaumMap from 'vue-daum-map';
   import config from './config';
 
@@ -62,11 +63,12 @@
     components: {VueDaumMap},
     data: () => ({
       appKey: config.appKey,
-      center: {lat:33.450701, lng:126.570667},
+      center: {lat:37.523191, lng:127.0534508},
       level: 3,
       mapTypeId: VueDaumMap.MapTypeId.NORMAL,
-      libraries: [],
-      mapObject: null
+      libraries: ["services","clusterer","drawing"],
+      mapObject: null,
+      // marker: {lat:37.523191, lng:127.0534508},
     }),
     methods: {
       onLoad (map) {
@@ -79,6 +81,12 @@
         console.log('Daum Map Loaded', boundsStr);
 
         this.mapObject = map;
+        //마커마커마컼마컼ㅋ
+        new kakao.maps.Marker({
+        position: map.getCenter(), 
+        map: map
+      });
+        // marker.setMap(map);
       },
       onMapEvent (event, params) {
         console.log(`Daum Map Event(${event})`, params);

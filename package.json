@@ -34,7 +34,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "load-script-once": "^2.0.1"
+    "load-script-once": "^2.0.1",
+    "vue-daum-map": "^1.0.15"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

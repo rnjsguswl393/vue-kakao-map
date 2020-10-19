@@ -98,6 +98,7 @@
             this.render();
             this.bindEvents();
             this.$emit('load', this.map);
+            
           });
         })
         .catch(err => {
@@ -135,10 +136,11 @@
           disableDoubleClickZoom: this.disableDoubleClickZoom,
           projectionId: this.projectionId,
           tileAnimation: this.tileAnimation,
-          keyboardShortcuts: this.keyboardShortcuts
+          keyboardShortcuts: this.keyboardShortcuts,
+          // marker:this.marker
         };
-
         this.map = new daum.maps.Map(this.$el, options); //지도 생성 및 객체 리턴
+        
       },
       bindEvents () {
         const handlers = {
